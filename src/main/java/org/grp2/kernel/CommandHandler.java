@@ -1,5 +1,5 @@
 package org.grp2.kernel;
 
-public interface CommandHandler extends Command {
-    void handle(Command command);
+public interface CommandHandler<C extends Command, R> {
+    R handle(C command);
 }

@@ -15,10 +15,10 @@ public final class CreateConsultantService implements CreateConsultantUseCase {
     }
 
     @Override
-    public UserId handle(CreateConsultantCommand command) {
+    public String handle(CreateConsultantCommand command) {
         var userId = createConsultantPort.nextId();
         var consultant = new Consultant(userId);
         createConsultantPort.save(consultant);
-        return userId;
+        return userId.value();
     }
 }

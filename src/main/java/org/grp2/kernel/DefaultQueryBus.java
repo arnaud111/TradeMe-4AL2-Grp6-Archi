@@ -1,25 +1,38 @@
 package org.grp2.kernel;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
-class DefaultQueryBus extends QueryBus {
-    private final Map<Class<? extends Query>, QueryHandler> handlers;
-    DefaultQueryBus() {
-        this.handlers = new HashMap<>();
+final class DefaultQueryBus<Q extends Query> implements QueryBus<Q> {
+
+    private final Map<Class<Q>, QueryHandler> registry;
+    private final Validator validator;
+
+    DefaultQueryBus(Map<Class<Q>, QueryHandler> registry, Validator validator) {
+        this.registry = registry;
+        this.validator = validator;
     }
 
     @Override
-    <Q extends Query<R>, R> void register(Class<Q> queryType, QueryHandler<Q, R> handler) {
-        handlers.put(queryType, handler);
-    }
-
-    @Override
-    <R> R dispatch(Query<R> query) {
-        QueryHandler<Query<R>, R> handler = handlers.get(query.getClass());
-        if (handler == null) {
-            throw new IllegalArgumentException("No handler registered for query type " + query.getClass());
+    public <R> R post(Q query) {
+        final Set<ConstraintViolation<Q>> violations = validator.validate(query);
+        if (!violations.isEmpty()) {
+            throw new RuntimeException(violations.toString());
         }
-        return handler.handle(query);
+
+        try {
+            var queryHandler = registry.get(query.getClass());
+            return (R) queryHandler.handle(query);
+        } catch (Exception e) {
+            throw new ApplicationException(String.format("Can't execute %s", query.name()), e);
+        }
+    }
+
+    @Override
+    public <R> void register(Class<Q> queryClass, QueryHandler<Q, R> queryHandler) {
+        registry.putIfAbsent(queryClass, queryHandler);
     }
 }

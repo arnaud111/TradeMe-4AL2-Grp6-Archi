@@ -1,26 +1,38 @@
 package org.grp2.kernel;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
-class DefaultCommandBus extends CommandBus {
-    private final Map<Class<? extends Command>, CommandHandler> handlers;
+final class DefaultCommandBus<C extends Command> implements CommandBus<C> {
 
-    DefaultCommandBus() {
-        this.handlers = new HashMap<>();
+    private final Map<Class<C>, CommandHandler> registry;
+    private final Validator validator;
+
+    DefaultCommandBus(Map<Class<C>, CommandHandler> registry, Validator validator) {
+        this.registry = registry;
+        this.validator = validator;
     }
 
     @Override
-    <C extends Command> void register(Class<C> commandType, CommandHandler handler) {
-        handlers.put(commandType, handler);
-    }
-
-    @Override
-    void dispatch(Command command) {
-        CommandHandler handler = handlers.get(command.getClass());
-        if (handler == null) {
-            throw new IllegalArgumentException("No handler registered for command type " + command.getClass());
+    public <R> R post(C command) {
+        final Set<ConstraintViolation<C>> violations = validator.validate(command);
+        if (!violations.isEmpty()) {
+            throw new ApplicationException(violations.toString());
         }
-        handler.handle(command);
+
+        try {
+            var commandHandler = registry.get(command.getClass());
+            return (R) commandHandler.handle(command);
+        } catch (Exception e) {
+            throw new ApplicationException(String.format("Can't execute %s", command.name()), e);
+        }
+    }
+
+    @Override
+    public <R> void register(Class<C> commandClass, CommandHandler<C, R> commandHandler) {
+        registry.putIfAbsent(commandClass, commandHandler);
     }
 }

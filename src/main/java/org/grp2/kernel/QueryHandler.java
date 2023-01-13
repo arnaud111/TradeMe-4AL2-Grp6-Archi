@@ -1,5 +1,5 @@
 package org.grp2.kernel;
 
-interface QueryHandler<Q extends Query<R>, R> {
+public interface QueryHandler<Q extends Query, R> {
     R handle(Q query);
 }
