@@ -12,6 +12,7 @@ C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\ja
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\kernel\DefaultQueryBus.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\port\in\CreateConsultantCommand.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\adapter\out\ConsultantEntity.java
+C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\events\ConsultantCreatedApplicationEvent.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\domain\Skills.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\port\out\LoadConsultantPort.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\kernel\QueryBus.java
@@ -26,6 +27,7 @@ C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\ja
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\adapter\out\EventEntity.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\adapter\out\LogNotifications.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\kernel\Event.java
+C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\StartupApplicationListener.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\kernel\ApplicationException.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\ApplicationConfiguration.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\domain\UserId.java
@@ -33,8 +35,10 @@ C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\ja
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\kernel\DefaultCommandBus.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\domain\Client.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\port\out\UpdateConsultantPort.java
+C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\domain\UserCreated.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\adapter\in\consultant\response\CreateConsultantResponse.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\port\in\CreateConsultantUseCase.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\port\out\CreateConsultantPort.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\kernel\CommandHandler.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\adapter\out\ConsultantEntityRepository.java
+C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\events\ConsultantCreatedEventHandler.java

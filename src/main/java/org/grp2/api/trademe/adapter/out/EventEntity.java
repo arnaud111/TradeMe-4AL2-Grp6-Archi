@@ -1,6 +1,6 @@
 package org.grp2.api.trademe.adapter.out;
 
-import jakarta.persistence.Embeddable;
+import javax.persistence.Embeddable;
 
 @Embeddable
 public class EventEntity {

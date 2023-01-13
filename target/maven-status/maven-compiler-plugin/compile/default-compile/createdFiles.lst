@@ -3,6 +3,7 @@ org\grp2\api\trademe\domain\Client.class
 org\grp2\api\trademe\domain\UserException.class
 org\grp2\kernel\CommandHandler.class
 org\grp2\kernel\Event.class
+org\grp2\api\trademe\StartupApplicationListener.class
 org\grp2\api\trademe\application\port\out\LoadConsultantPort.class
 org\grp2\api\trademe\domain\Skills.class
 org\grp2\kernel\CommandBus.class
@@ -13,12 +14,14 @@ org\grp2\kernel\Command.class
 org\grp2\kernel\DefaultEventDispatcher.class
 org\grp2\kernel\Query.class
 org\grp2\kernel\BusFactory.class
+org\grp2\api\trademe\application\events\ConsultantCreatedApplicationEvent.class
 org\grp2\kernel\EventDispatcher.class
 org\grp2\api\trademe\adapter\out\ConsultantEntity.class
 org\grp2\api\trademe\ApplicationConfiguration.class
 org\grp2\api\trademe\application\port\in\CreateConsultantCommand.class
 org\grp2\kernel\ApplicationException.class
 org\grp2\kernel\UseCaseValidator.class
+org\grp2\api\trademe\application\events\ConsultantCreatedEventHandler.class
 org\grp2\kernel\DefaultCommandBus.class
 org\grp2\kernel\QueryBus.class
 org\grp2\api\trademe\adapter\out\EventEntity.class
@@ -30,6 +33,7 @@ org\grp2\api\trademe\domain\UserId.class
 org\grp2\api\trademe\adapter\out\ConsultantEntityRepository.class
 org\grp2\api\trademe\adapter\out\LogNotifications.class
 org\grp2\kernel\QueryHandler.class
+org\grp2\api\trademe\domain\UserCreated.class
 org\grp2\api\trademe\adapter\out\InMemoryConsultantPersistenceAdapter.class
 org\grp2\api\trademe\Application.class
 org\grp2\api\trademe\application\port\in\CreateConsultantUseCase.class
