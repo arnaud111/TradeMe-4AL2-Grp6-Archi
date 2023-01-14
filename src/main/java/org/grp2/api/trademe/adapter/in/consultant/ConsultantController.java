@@ -27,9 +27,9 @@ public final class ConsultantController {
         this.queryBus = queryBus;
     }
 
-    /*@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public CreateConsultantResponse create(@RequestBody @Valid CreateConsultantRequest createConsultantRequest) {
-        var accountId = (String) commandBus.post(new CreateConsultantCommand(createConsultantRequest));
-        return new CreateConsultantResponse(accountId);
-    }*/
+        var userId = (String) commandBus.post(new CreateConsultantCommand());
+        return new CreateConsultantResponse(userId);
+    }
 }
