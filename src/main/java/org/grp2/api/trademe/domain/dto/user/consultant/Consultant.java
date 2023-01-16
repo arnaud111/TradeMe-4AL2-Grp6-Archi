@@ -1,4 +1,7 @@
-package org.grp2.api.trademe.domain;
+package org.grp2.api.trademe.domain.dto.user.consultant;
+
+import org.grp2.api.trademe.domain.dto.user.User;
+import org.grp2.api.trademe.domain.dto.user.UserId;
 
 public class Consultant extends User {
 

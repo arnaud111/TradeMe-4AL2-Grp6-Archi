@@ -5,8 +5,8 @@ import com.google.gson.GsonBuilder;
 import org.grp2.api.trademe.application.port.out.CreateConsultantPort;
 import org.grp2.api.trademe.application.port.out.LoadConsultantPort;
 import org.grp2.api.trademe.application.port.out.UpdateConsultantPort;
-import org.grp2.api.trademe.domain.Consultant;
-import org.grp2.api.trademe.domain.UserId;
+import org.grp2.api.trademe.domain.dto.user.consultant.Consultant;
+import org.grp2.api.trademe.domain.dto.user.UserId;
 
 import java.util.UUID;
 import java.util.stream.Collectors;

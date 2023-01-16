@@ -3,9 +3,9 @@ package org.grp2.api.trademe.adapter.out;
 import org.grp2.api.trademe.application.port.out.CreateConsultantPort;
 import org.grp2.api.trademe.application.port.out.LoadConsultantPort;
 import org.grp2.api.trademe.application.port.out.UpdateConsultantPort;
-import org.grp2.api.trademe.domain.Consultant;
-import org.grp2.api.trademe.domain.UserException;
-import org.grp2.api.trademe.domain.UserId;
+import org.grp2.api.trademe.domain.dto.user.consultant.Consultant;
+import org.grp2.api.trademe.domain.exception.user.UserException;
+import org.grp2.api.trademe.domain.dto.user.UserId;
 
 import java.util.HashMap;
 import java.util.Map;

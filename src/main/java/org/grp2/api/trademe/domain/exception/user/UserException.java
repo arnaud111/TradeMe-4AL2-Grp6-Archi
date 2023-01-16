@@ -1,5 +1,7 @@
-package org.grp2.api.trademe.domain;
+package org.grp2.api.trademe.domain.exception.user;
 
+
+import org.grp2.api.trademe.domain.dto.user.UserId;
 
 public final class UserException extends RuntimeException {
 

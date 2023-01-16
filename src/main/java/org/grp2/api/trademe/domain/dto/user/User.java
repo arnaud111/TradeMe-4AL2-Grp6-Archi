@@ -1,5 +1,6 @@
-package org.grp2.api.trademe.domain;
+package org.grp2.api.trademe.domain.dto.user;
 
+import org.grp2.api.trademe.domain.event.user.UserCreated;
 import org.grp2.kernel.Event;
 
 import java.util.ArrayList;

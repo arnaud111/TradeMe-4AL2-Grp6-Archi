@@ -1,7 +1,7 @@
 package org.grp2.api.trademe.application.port.out;
 
-import org.grp2.api.trademe.domain.Consultant;
-import org.grp2.api.trademe.domain.UserId;
+import org.grp2.api.trademe.domain.dto.user.consultant.Consultant;
+import org.grp2.api.trademe.domain.dto.user.UserId;
 
 public interface CreateConsultantPort {
 

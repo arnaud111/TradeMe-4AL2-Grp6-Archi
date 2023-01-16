@@ -1,4 +1,4 @@
-package org.grp2.api.trademe.domain;
+package org.grp2.api.trademe.domain.dto.user;
 
 import java.util.Objects;
 import java.util.UUID;
