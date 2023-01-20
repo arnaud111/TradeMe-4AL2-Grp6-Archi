@@ -1,9 +1,10 @@
 package org.grp2.api.trademe.adapter.out.entity;
 
 import javax.persistence.Embeddable;
+import java.io.Serializable;
 
 @Embeddable
-public class EventEntity {
+public class EventEntity implements Serializable {
 
     private String classname;
     private String data;

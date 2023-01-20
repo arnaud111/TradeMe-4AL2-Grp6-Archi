@@ -2,8 +2,10 @@ package org.grp2.api.trademe;
 
 import org.grp2.api.trademe.application.events.ConsultantCreatedApplicationEvent;
 import org.grp2.api.trademe.application.events.ConsultantCreatedEventHandler;
-import org.grp2.api.trademe.application.port.in.CreateConsultantCommand;
+import org.grp2.api.trademe.application.port.in.command.CreateConsultantCommand;
+import org.grp2.api.trademe.application.port.in.command.FindByIdConsultantCommand;
 import org.grp2.api.trademe.application.services.CreateConsultantService;
+import org.grp2.api.trademe.application.services.FindByIdConsultantService;
 import org.grp2.kernel.CommandBus;
 import org.grp2.kernel.EventDispatcher;
 import org.grp2.kernel.QueryBus;
@@ -17,13 +19,15 @@ public class StartupApplicationListener implements ApplicationListener<ContextRe
     private final CommandBus commandBus;
     private final QueryBus queryBus;
     private final CreateConsultantService createConsultantService;
+    private final FindByIdConsultantService findByIdConsultantService;
     private final EventDispatcher eventDispatcher;
     private final ConsultantCreatedEventHandler consultantCreatedEventHandler;
 
-    public StartupApplicationListener(CommandBus commandBus, QueryBus queryBus, CreateConsultantService createConsultantService, EventDispatcher eventDispatcher, ConsultantCreatedEventHandler consultantCreatedEventHandler) {
+    public StartupApplicationListener(CommandBus commandBus, QueryBus queryBus, CreateConsultantService createConsultantService, FindByIdConsultantService findByIdConsultantService, EventDispatcher eventDispatcher, ConsultantCreatedEventHandler consultantCreatedEventHandler) {
         this.commandBus = commandBus;
         this.queryBus = queryBus;
         this.createConsultantService = createConsultantService;
+        this.findByIdConsultantService = findByIdConsultantService;
         this.eventDispatcher = eventDispatcher;
         this.consultantCreatedEventHandler = consultantCreatedEventHandler;
     }
@@ -33,5 +37,7 @@ public class StartupApplicationListener implements ApplicationListener<ContextRe
         eventDispatcher.register(ConsultantCreatedApplicationEvent.class, consultantCreatedEventHandler);
 
         commandBus.register(CreateConsultantCommand.class, createConsultantService);
+
+        commandBus.register(FindByIdConsultantCommand.class, findByIdConsultantService);
     }
 }

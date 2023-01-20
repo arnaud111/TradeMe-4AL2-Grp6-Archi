@@ -1,7 +1,7 @@
 package org.grp2.api.trademe.application.services;
 
 import org.grp2.api.trademe.application.events.ConsultantCreatedApplicationEvent;
-import org.grp2.api.trademe.application.port.in.CreateConsultantCommand;
+import org.grp2.api.trademe.application.port.in.command.CreateConsultantCommand;
 import org.grp2.api.trademe.application.port.out.CreateConsultantPort;
 import org.grp2.api.trademe.domain.dto.account.consultant.Consultant;
 import org.grp2.kernel.CommandHandler;

@@ -4,8 +4,10 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.grp2.api.trademe.adapter.out.entity.ConsultantEntity;
 import org.grp2.api.trademe.adapter.out.entity.EventEntity;
+import org.grp2.api.trademe.domain.dto.account.AccountId;
 import org.grp2.api.trademe.domain.dto.account.consultant.Consultant;
 
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class ConsultantMapper {
@@ -27,5 +29,19 @@ public class ConsultantMapper {
                 new EventEntity(event.getClass().getName(), gson.toJson(event))).collect(Collectors.toList()));
 
         return consultantEntity;
+    }
+
+    public static Consultant consultantEntityToDomainConsultant(ConsultantEntity consultantEntity) {
+
+        Consultant consultant = new Consultant(new AccountId(UUID.randomUUID()));
+        consultant.setAdr(consultantEntity.getAdr());
+        consultant.setAvailability(consultantEntity.getAvailability());
+        consultant.setModality(consultantEntity.getModality());
+        consultant.setEmail(consultantEntity.getEmail());
+        consultant.setPassword(consultantEntity.getPassword());
+        consultant.setName(consultantEntity.getName());
+        consultant.setLastName(consultantEntity.getLastName());
+
+        return consultant;
     }
 }

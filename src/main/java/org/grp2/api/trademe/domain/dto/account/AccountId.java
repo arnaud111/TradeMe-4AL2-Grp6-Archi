@@ -15,6 +15,10 @@ public final class AccountId {
         return new AccountId(value);
     }
 
+    public static AccountId of(String value) {
+        return new AccountId(UUID.fromString(value));
+    }
+
     public String value() {
         return this.value.toString();
     }

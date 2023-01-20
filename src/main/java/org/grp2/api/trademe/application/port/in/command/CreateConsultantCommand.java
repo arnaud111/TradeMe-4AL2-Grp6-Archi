@@ -1,4 +1,4 @@
-package org.grp2.api.trademe.application.port.in;
+package org.grp2.api.trademe.application.port.in.command;
 
 
 import org.grp2.kernel.Command;
@@ -9,10 +9,13 @@ public final class CreateConsultantCommand implements Command {
 
     @NotNull
     public final String email;
+
     @NotNull
     public final String password;
+
     @NotNull
     public final String name;
+
     @NotNull
     public final String lastName;
 

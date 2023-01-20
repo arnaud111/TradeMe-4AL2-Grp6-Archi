@@ -2,11 +2,12 @@ package org.grp2.api.trademe.adapter.out.entity;
 
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "CONSULTANT")
-public class ConsultantEntity extends AccountEntity {
+public class ConsultantEntity extends AccountEntity implements Serializable {
 
     private Integer adr;
 
