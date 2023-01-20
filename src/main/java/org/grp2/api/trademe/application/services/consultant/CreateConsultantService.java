@@ -26,6 +26,10 @@ public final class CreateConsultantService implements CommandHandler<CreateConsu
         consultant.setLastName(command.lastName);
         consultant.setPassword(command.password);
         consultant.setEmail(command.email);
+        consultant.setAdr(command.adr);
+        consultant.setAvailability(command.availability);
+        consultant.setModality(command.modality);
+        consultant.setSkills(command.skills);
         createConsultantPort.save(consultant);
         eventDispatcher.dispatch(new ConsultantCreatedApplicationEvent(accountId));
         return accountId.value();

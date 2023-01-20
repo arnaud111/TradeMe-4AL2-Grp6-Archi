@@ -34,7 +34,11 @@ public final class ConsultantController {
         var accountId = (String) commandBus.post(new CreateConsultantCommand(createConsultantRequest.getEmail(),
                 createConsultantRequest.getPassword(),
                 createConsultantRequest.getName(),
-                createConsultantRequest.getLastName()));
+                createConsultantRequest.getLastName(),
+                createConsultantRequest.getAdr(),
+                createConsultantRequest.getAvailability(),
+                createConsultantRequest.getModality(),
+                createConsultantRequest.getSkills()));
         return new CreateConsultantResponse(accountId);
     }
 
