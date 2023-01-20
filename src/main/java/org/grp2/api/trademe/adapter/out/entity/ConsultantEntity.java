@@ -3,6 +3,7 @@ package org.grp2.api.trademe.adapter.out.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,14 +18,18 @@ public class ConsultantEntity extends AccountEntity implements Serializable {
     @Column(length=32)
     private String modality;
 
+    @ElementCollection
+    private List<String> skills;
+
     public ConsultantEntity() {
     }
 
-    public ConsultantEntity(String id, String email, String password, String name, String lastName, List<EventEntity> recordedEvents, String id1, Integer adr, String availability, String modality) {
+    public ConsultantEntity(String id, String email, String password, String name, String lastName, List<EventEntity> recordedEvents, Integer adr, String availability, String modality, List<String> skills) {
         super(id, email, password, name, lastName, recordedEvents);
         this.adr = adr;
         this.availability = availability;
         this.modality = modality;
+        this.skills = skills;
     }
 
     public Integer getAdr() {
@@ -49,5 +54,13 @@ public class ConsultantEntity extends AccountEntity implements Serializable {
 
     public void setModality(String modality) {
         this.modality = modality;
+    }
+
+    public List<String> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(List<String> skills) {
+        this.skills = skills;
     }
 }

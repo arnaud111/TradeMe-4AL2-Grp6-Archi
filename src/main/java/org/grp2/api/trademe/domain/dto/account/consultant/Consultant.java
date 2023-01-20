@@ -3,23 +3,25 @@ package org.grp2.api.trademe.domain.dto.account.consultant;
 import org.grp2.api.trademe.domain.dto.account.Account;
 import org.grp2.api.trademe.domain.dto.account.AccountId;
 
+import java.util.ArrayList;
+
 public class Consultant extends Account {
 
-    private Skills skills;
+    private ArrayList<String> skills;
     private Integer adr;
     private String availability;
     private String modality;
 
     public Consultant(AccountId accountId) {
         super(accountId);
-        this.skills = new Skills();
+        this.skills = new ArrayList<String>();
     }
 
-    public Skills getSkills() {
+    public ArrayList<String> getSkills() {
         return skills;
     }
 
-    public void setSkills(Skills skills) {
+    public void setSkills(ArrayList<String> skills) {
         this.skills = skills;
     }
 

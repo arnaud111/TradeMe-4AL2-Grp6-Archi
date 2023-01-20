@@ -46,6 +46,7 @@ public final class ConsultantController {
                 consultant.getModality(),
                 consultant.getEmail(),
                 consultant.getName(),
-                consultant.getLastName());
+                consultant.getLastName(),
+                consultant.getSkills());
     }
 }
