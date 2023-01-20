@@ -3,9 +3,9 @@ package org.grp2.api.trademe.adapter.out.persistence;
 import org.grp2.api.trademe.adapter.out.entity.ConsultantEntity;
 import org.grp2.api.trademe.adapter.out.repository.ConsultantEntityRepository;
 import org.grp2.api.trademe.application.mapper.ConsultantMapper;
-import org.grp2.api.trademe.application.port.out.CreateConsultantPort;
-import org.grp2.api.trademe.application.port.out.LoadConsultantPort;
-import org.grp2.api.trademe.application.port.out.UpdateConsultantPort;
+import org.grp2.api.trademe.application.port.out.consultant.CreateConsultantPort;
+import org.grp2.api.trademe.application.port.out.consultant.LoadConsultantPort;
+import org.grp2.api.trademe.application.port.out.consultant.UpdateConsultantPort;
 import org.grp2.api.trademe.domain.dto.account.consultant.Consultant;
 import org.grp2.api.trademe.domain.dto.account.AccountId;
 
@@ -40,6 +40,9 @@ public class ConsultantPersistenceAdapter implements LoadConsultantPort, UpdateC
 
     @Override
     public void update(Consultant consultant) {
-
+        ConsultantEntity consultantEntityToSave = ConsultantMapper.domainConsultantToConsultantEntity(consultant);
+        Optional<ConsultantEntity> consultantEntityToUpdate = consultantEntityRepository.findById(consultantEntityToSave.getId());
+        if (consultantEntityToUpdate.isEmpty()) return;
+        consultantEntityRepository.save(consultantEntityToSave);
     }
 }

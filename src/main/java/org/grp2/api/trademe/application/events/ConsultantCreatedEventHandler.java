@@ -1,6 +1,6 @@
 package org.grp2.api.trademe.application.events;
 
-import org.grp2.api.trademe.application.port.out.Notifications;
+import org.grp2.api.trademe.application.port.out.notification.Notifications;
 import org.grp2.kernel.EventHandler;
 
 public final class ConsultantCreatedEventHandler implements EventHandler<ConsultantCreatedApplicationEvent> {

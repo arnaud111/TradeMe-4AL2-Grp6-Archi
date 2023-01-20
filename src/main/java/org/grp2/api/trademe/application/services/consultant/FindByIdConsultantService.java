@@ -1,8 +1,7 @@
-package org.grp2.api.trademe.application.services;
+package org.grp2.api.trademe.application.services.consultant;
 
-import org.grp2.api.trademe.adapter.out.entity.ConsultantEntity;
-import org.grp2.api.trademe.application.port.in.command.FindByIdConsultantCommand;
-import org.grp2.api.trademe.application.port.out.LoadConsultantPort;
+import org.grp2.api.trademe.application.port.in.command.consultant.FindByIdConsultantCommand;
+import org.grp2.api.trademe.application.port.out.consultant.LoadConsultantPort;
 import org.grp2.api.trademe.domain.dto.account.AccountId;
 import org.grp2.api.trademe.domain.dto.account.consultant.Consultant;
 import org.grp2.kernel.CommandHandler;

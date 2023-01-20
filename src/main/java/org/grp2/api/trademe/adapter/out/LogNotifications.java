@@ -1,6 +1,6 @@
 package org.grp2.api.trademe.adapter.out;
 
-import org.grp2.api.trademe.application.port.out.Notifications;
+import org.grp2.api.trademe.application.port.out.notification.Notifications;
 
 public final class LogNotifications implements Notifications {
     @Override

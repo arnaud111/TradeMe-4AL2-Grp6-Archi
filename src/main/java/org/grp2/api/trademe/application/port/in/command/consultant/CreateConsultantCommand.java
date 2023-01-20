@@ -1,4 +1,4 @@
-package org.grp2.api.trademe.application.port.in.command;
+package org.grp2.api.trademe.application.port.in.command.consultant;
 
 
 import org.grp2.kernel.Command;

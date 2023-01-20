@@ -1,4 +1,4 @@
-package org.grp2.api.trademe.application.port.in.command;
+package org.grp2.api.trademe.application.port.in.command.consultant;
 
 import org.grp2.kernel.Command;
 
@@ -8,7 +8,6 @@ public class FindByIdConsultantCommand implements Command {
 
     @NotNull
     public final String id;
-
 
     public FindByIdConsultantCommand(String id) {
         this.id = id;

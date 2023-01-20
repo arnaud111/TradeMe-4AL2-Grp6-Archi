@@ -4,8 +4,10 @@ import org.grp2.api.trademe.adapter.out.repository.ConsultantEntityRepository;
 import org.grp2.api.trademe.adapter.out.persistence.ConsultantPersistenceAdapter;
 import org.grp2.api.trademe.adapter.out.LogNotifications;
 import org.grp2.api.trademe.application.events.ConsultantCreatedEventHandler;
-import org.grp2.api.trademe.application.services.CreateConsultantService;
-import org.grp2.api.trademe.application.services.FindByIdConsultantService;
+import org.grp2.api.trademe.application.events.ConsultantUpdatedEventHandler;
+import org.grp2.api.trademe.application.services.consultant.CreateConsultantService;
+import org.grp2.api.trademe.application.services.consultant.FindByIdConsultantService;
+import org.grp2.api.trademe.application.services.consultant.UpdateConsultantService;
 import org.grp2.kernel.EventDispatcher;
 import org.grp2.kernel.KernelConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +41,17 @@ public class ApplicationConfiguration {
     }
 
     @Bean
+    public UpdateConsultantService updateConsultantService() {
+        return new UpdateConsultantService(persistenceAdapter(), persistenceAdapter(), eventDispatcher);
+    }
+
+    @Bean
     public ConsultantCreatedEventHandler consultantCreatedEventHandler() {
         return new ConsultantCreatedEventHandler(new LogNotifications());
+    }
+
+    @Bean
+    public ConsultantUpdatedEventHandler consultantUpdatedEventHandler() {
+        return new ConsultantUpdatedEventHandler(new LogNotifications());
     }
 }

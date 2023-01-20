@@ -2,7 +2,7 @@ package org.grp2.api.trademe.adapter.in.consultant.response;
 
 import java.util.ArrayList;
 
-public class FindByIdConsultantResponse {
+public class ConsultantResponse {
 
     public final String accountId;
     public final Integer adr;
@@ -13,7 +13,7 @@ public class FindByIdConsultantResponse {
     public final String lastName;
     public final ArrayList<String> skills;
 
-    public FindByIdConsultantResponse(String accountId, Integer adr, String availability, String modality, String email, String name, String lastName, ArrayList<String> skills) {
+    public ConsultantResponse(String accountId, Integer adr, String availability, String modality, String email, String name, String lastName, ArrayList<String> skills) {
         this.accountId = accountId;
         this.adr = adr;
         this.availability = availability;
