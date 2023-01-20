@@ -29,7 +29,10 @@ public final class ConsultantController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public CreateConsultantResponse create(@RequestBody @Valid CreateConsultantRequest createConsultantRequest) {
-        var userId = (String) commandBus.post(new CreateConsultantCommand());
+        var userId = (String) commandBus.post(new CreateConsultantCommand(createConsultantRequest.getEmail(),
+                createConsultantRequest.getPassword(),
+                createConsultantRequest.getName(),
+                createConsultantRequest.getLastName()));
         return new CreateConsultantResponse(userId);
     }
 }

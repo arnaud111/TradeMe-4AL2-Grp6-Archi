@@ -22,6 +22,10 @@ public final class CreateConsultantService implements CommandHandler<CreateConsu
     public String handle(CreateConsultantCommand command) {
         var userId = createConsultantPort.nextId();
         var consultant = new Consultant(userId);
+        consultant.setName(command.name);
+        consultant.setLastName(command.lastName);
+        consultant.setPassword(command.password);
+        consultant.setEmail(command.email);
         createConsultantPort.save(consultant);
         eventDispatcher.dispatch(new ConsultantCreatedApplicationEvent(userId));
         return userId.value();

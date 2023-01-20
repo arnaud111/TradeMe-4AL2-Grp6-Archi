@@ -1,6 +1,6 @@
 package org.grp2.api.trademe;
 
-import org.grp2.api.trademe.adapter.out.ConsultantEntityRepository;
+import org.grp2.api.trademe.adapter.out.repository.ConsultantEntityRepository;
 import org.grp2.api.trademe.adapter.out.ConsultantPersistenceAdapter;
 import org.grp2.api.trademe.adapter.out.LogNotifications;
 import org.grp2.api.trademe.application.events.ConsultantCreatedEventHandler;

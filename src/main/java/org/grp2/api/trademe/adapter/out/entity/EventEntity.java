@@ -1,4 +1,4 @@
-package org.grp2.api.trademe.adapter.out;
+package org.grp2.api.trademe.adapter.out.entity;
 
 import javax.persistence.Embeddable;
 
