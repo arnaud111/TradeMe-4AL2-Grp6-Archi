@@ -1,4 +1,4 @@
-package org.grp2.api.trademe.domain.dto.user.consultant;
+package org.grp2.api.trademe.domain.dto.account.consultant;
 
 import java.util.ArrayList;
 

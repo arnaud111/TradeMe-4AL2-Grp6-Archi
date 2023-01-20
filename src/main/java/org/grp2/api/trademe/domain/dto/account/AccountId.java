@@ -1,18 +1,18 @@
-package org.grp2.api.trademe.domain.dto.user;
+package org.grp2.api.trademe.domain.dto.account;
 
 import java.util.Objects;
 import java.util.UUID;
 
-public final class UserId {
+public final class AccountId {
 
     private final UUID value;
 
-    public UserId(UUID value) {
+    public AccountId(UUID value) {
         this.value = value;
     }
 
-    public static UserId of(UUID value) {
-        return new UserId(value);
+    public static AccountId of(UUID value) {
+        return new AccountId(value);
     }
 
     public String value() {
@@ -28,13 +28,13 @@ public final class UserId {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
-        UserId userId = (UserId) obj;
-        return Objects.equals(this.value, userId.value);
+        AccountId accountId = (AccountId) obj;
+        return Objects.equals(this.value, accountId.value);
     }
 
     @Override
     public String toString() {
-        return "UserId {" +
+        return "AccountId {" +
                 "value='" + this.value + '\'' +
                 '}';
     }

@@ -1,6 +1,6 @@
-package org.grp2.api.trademe.domain.dto.user;
+package org.grp2.api.trademe.domain.dto.account;
 
-import org.grp2.api.trademe.domain.event.user.UserCreated;
+import org.grp2.api.trademe.domain.event.account.AccountCreated;
 import org.grp2.kernel.Event;
 
 import java.util.ArrayList;
@@ -8,9 +8,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
-public class User {
+public class Account {
 
-    private final UserId userId;
+    private final AccountId accountId;
     private String email;
     private String password;
     private String name;
@@ -18,34 +18,34 @@ public class User {
 
     private final List<Event> recordedEvents;
 
-    public User(UserId userId) {
-        this.userId = userId;
+    public Account(AccountId accountId) {
+        this.accountId = accountId;
         this.recordedEvents = new ArrayList<>();
-        this.recordedEvents.add(new UserCreated(userId));
+        this.recordedEvents.add(new AccountCreated(accountId));
     }
 
-    public User(UserId userId, String email, String password, String name, String lastName) {
-        this.userId = userId;
+    public Account(AccountId accountId, String email, String password, String name, String lastName) {
+        this.accountId = accountId;
         this.email = email;
         this.password = password;
         this.name = name;
         this.lastName = lastName;
         this.recordedEvents = new ArrayList<>();
-        this.recordedEvents.add(new UserCreated(userId));
+        this.recordedEvents.add(new AccountCreated(accountId));
     }
 
-    public User(UUID userId, String email, String password, String name, String lastName) {
-        this.userId = UserId.of(userId);
+    public Account(UUID accountId, String email, String password, String name, String lastName) {
+        this.accountId = AccountId.of(accountId);
         this.email = email;
         this.password = password;
         this.name = name;
         this.lastName = lastName;
         this.recordedEvents = new ArrayList<>();
-        this.recordedEvents.add(new UserCreated(this.userId));
+        this.recordedEvents.add(new AccountCreated(this.accountId));
     }
 
-    public UserId id() {
-        return userId;
+    public AccountId id() {
+        return accountId;
     }
 
     public String getEmail() {

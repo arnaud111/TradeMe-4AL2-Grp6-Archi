@@ -6,8 +6,8 @@ import org.grp2.api.trademe.application.mapper.ConsultantMapper;
 import org.grp2.api.trademe.application.port.out.CreateConsultantPort;
 import org.grp2.api.trademe.application.port.out.LoadConsultantPort;
 import org.grp2.api.trademe.application.port.out.UpdateConsultantPort;
-import org.grp2.api.trademe.domain.dto.user.consultant.Consultant;
-import org.grp2.api.trademe.domain.dto.user.UserId;
+import org.grp2.api.trademe.domain.dto.account.consultant.Consultant;
+import org.grp2.api.trademe.domain.dto.account.AccountId;
 
 import java.util.UUID;
 
@@ -20,8 +20,8 @@ public class ConsultantPersistenceAdapter implements LoadConsultantPort, UpdateC
     }
 
     @Override
-    public UserId nextId() {
-        return UserId.of(UUID.randomUUID());
+    public AccountId nextId() {
+        return AccountId.of(UUID.randomUUID());
     }
 
     @Override
@@ -31,7 +31,7 @@ public class ConsultantPersistenceAdapter implements LoadConsultantPort, UpdateC
     }
 
     @Override
-    public Consultant load(UserId userId) {
+    public Consultant load(AccountId accountId) {
         return null;
     }
 

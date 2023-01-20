@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.grp2.api.trademe.adapter.out.entity.ConsultantEntity;
 import org.grp2.api.trademe.adapter.out.entity.EventEntity;
-import org.grp2.api.trademe.domain.dto.user.consultant.Consultant;
+import org.grp2.api.trademe.domain.dto.account.consultant.Consultant;
 
 import java.util.stream.Collectors;
 
@@ -13,7 +13,6 @@ public class ConsultantMapper {
     public static ConsultantEntity domainConsultantToConsultantEntity(Consultant consultant) {
         GsonBuilder gsonBuilder = new GsonBuilder();
         final Gson gson = gsonBuilder.create();
-
 
         ConsultantEntity consultantEntity = new ConsultantEntity();
         consultantEntity.setAdr(consultant.getAdr());

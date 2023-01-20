@@ -1,17 +1,17 @@
-package org.grp2.api.trademe.domain.dto.user.consultant;
+package org.grp2.api.trademe.domain.dto.account.consultant;
 
-import org.grp2.api.trademe.domain.dto.user.User;
-import org.grp2.api.trademe.domain.dto.user.UserId;
+import org.grp2.api.trademe.domain.dto.account.Account;
+import org.grp2.api.trademe.domain.dto.account.AccountId;
 
-public class Consultant extends User {
+public class Consultant extends Account {
 
     private Skills skills;
     private Integer adr;
     private String availability;
     private String modality;
 
-    public Consultant(UserId userId) {
-        super(userId);
+    public Consultant(AccountId accountId) {
+        super(accountId);
         this.skills = new Skills();
     }
 

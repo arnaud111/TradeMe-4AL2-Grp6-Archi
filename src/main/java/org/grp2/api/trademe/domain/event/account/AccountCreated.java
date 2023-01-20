@@ -1,13 +1,13 @@
-package org.grp2.api.trademe.application.events;
+package org.grp2.api.trademe.domain.event.account;
 
 import org.grp2.api.trademe.domain.dto.account.AccountId;
 import org.grp2.kernel.Event;
 
-public class ConsultantCreatedApplicationEvent implements Event {
+public class AccountCreated implements Event {
 
     private final AccountId accountId;
 
-    public ConsultantCreatedApplicationEvent(AccountId accountId) {
+    public AccountCreated(AccountId accountId) {
         this.accountId = accountId;
     }
 
