@@ -14,8 +14,6 @@ public class ConsultantMapper {
         GsonBuilder gsonBuilder = new GsonBuilder();
         final Gson gson = gsonBuilder.create();
 
-        /*userEntity.setRecordedEvents(consultant.getRecordedEvents().stream().map(event ->
-                new EventEntity(event.getClass().getName(), gson.toJson(event))).collect(Collectors.toList()));*/
 
         ConsultantEntity consultantEntity = new ConsultantEntity();
         consultantEntity.setAdr(consultant.getAdr());
@@ -26,6 +24,8 @@ public class ConsultantMapper {
         consultantEntity.setPassword(consultant.getPassword());
         consultantEntity.setName(consultant.getName());
         consultantEntity.setLastName(consultant.getLastName());
+        consultantEntity.setRecordedEvents(consultant.getRecordedEvents().stream().map(event ->
+                new EventEntity(event.getClass().getName(), gson.toJson(event))).collect(Collectors.toList()));
 
         return consultantEntity;
     }

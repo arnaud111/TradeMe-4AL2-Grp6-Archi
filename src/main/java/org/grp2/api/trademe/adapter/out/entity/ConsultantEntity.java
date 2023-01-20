@@ -32,10 +32,13 @@ public class ConsultantEntity {
     @Column(length=32)
     private String modality;
 
+    @ElementCollection
+    private List<EventEntity> recordedEvents;
+
     public ConsultantEntity() {
     }
 
-    public ConsultantEntity(String id, String email, String password, String name, String lastName, Integer adr, String availability, String modality) {
+    public ConsultantEntity(String id, String email, String password, String name, String lastName, Integer adr, String availability, String modality, List<EventEntity> recordedEvents) {
         this.id = id;
         this.email = email;
         this.password = password;
@@ -44,6 +47,7 @@ public class ConsultantEntity {
         this.adr = adr;
         this.availability = availability;
         this.modality = modality;
+        this.recordedEvents = recordedEvents;
     }
 
     public String getId() {
@@ -108,5 +112,13 @@ public class ConsultantEntity {
 
     public void setModality(String modality) {
         this.modality = modality;
+    }
+
+    public List<EventEntity> getRecordedEvents() {
+        return recordedEvents;
+    }
+
+    public void setRecordedEvents(List<EventEntity> recordedEvents) {
+        this.recordedEvents = recordedEvents;
     }
 }
