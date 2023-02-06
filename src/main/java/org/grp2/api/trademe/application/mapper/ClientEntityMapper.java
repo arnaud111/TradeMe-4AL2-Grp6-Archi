@@ -3,15 +3,17 @@ package org.grp2.api.trademe.application.mapper;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.grp2.api.trademe.adapter.out.entity.ClientEntity;
-import org.grp2.api.trademe.adapter.out.entity.ConsultantEntity;
 import org.grp2.api.trademe.adapter.out.entity.EventEntity;
+import org.grp2.api.trademe.adapter.out.entity.OfferEntity;
 import org.grp2.api.trademe.domain.dto.account.AccountId;
 import org.grp2.api.trademe.domain.dto.account.client.Client;
-import org.grp2.api.trademe.domain.dto.account.consultant.Consultant;
+import org.grp2.api.trademe.domain.dto.offer.Offer;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
-public class ClientMapper {
+public class ClientEntityMapper {
 
     public static ClientEntity domainClientToClientEntity(Client client) {
         GsonBuilder gsonBuilder = new GsonBuilder();
@@ -38,5 +40,13 @@ public class ClientMapper {
         client.setLastName(clientEntity.getLastName());
 
         return client;
+    }
+
+    public static List<Client> clientEntitiesToDomainClients(List<ClientEntity> clientEntities) {
+        List<Client> clients = new ArrayList<>();
+        for (ClientEntity clientEntity : clientEntities) {
+            clients.add(ClientEntityMapper.clientEntityToDomainClient(clientEntity));
+        }
+        return clients;
     }
 }

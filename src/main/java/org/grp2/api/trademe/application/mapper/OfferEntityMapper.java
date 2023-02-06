@@ -10,9 +10,11 @@ import org.grp2.api.trademe.domain.dto.account.consultant.Consultant;
 import org.grp2.api.trademe.domain.dto.offer.Offer;
 import org.grp2.api.trademe.domain.dto.offer.OfferId;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
-public class OfferMapper {
+public class OfferEntityMapper {
 
     public static OfferEntity domainOfferToOfferEntity(Offer offer) {
         GsonBuilder gsonBuilder = new GsonBuilder();
@@ -36,5 +38,13 @@ public class OfferMapper {
         offer.setTitle(offerEntity.getTitle());
 
         return offer;
+    }
+
+    public static List<Offer> offerEntitiesToDomainOffers(List<OfferEntity> offerEntities) {
+        List<Offer> offers = new ArrayList<>();
+        for (OfferEntity offerEntity : offerEntities) {
+            offers.add(OfferEntityMapper.offerEntityToDomainOffer(offerEntity));
+        }
+        return offers;
     }
 }

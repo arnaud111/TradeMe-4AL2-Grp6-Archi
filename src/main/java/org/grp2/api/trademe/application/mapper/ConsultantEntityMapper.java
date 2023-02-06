@@ -8,10 +8,10 @@ import org.grp2.api.trademe.domain.dto.account.AccountId;
 import org.grp2.api.trademe.domain.dto.account.consultant.Consultant;
 
 import java.util.ArrayList;
-import java.util.UUID;
+import java.util.List;
 import java.util.stream.Collectors;
 
-public class ConsultantMapper {
+public class ConsultantEntityMapper {
 
     public static ConsultantEntity domainConsultantToConsultantEntity(Consultant consultant) {
         GsonBuilder gsonBuilder = new GsonBuilder();
@@ -46,5 +46,13 @@ public class ConsultantMapper {
         consultant.setSkills(new ArrayList<>(consultantEntity.getSkills()));
 
         return consultant;
+    }
+
+    public static List<Consultant> consultantEntitiesToDomainConsultants(List<ConsultantEntity> consultantEntities) {
+        List<Consultant> consultants = new ArrayList<>();
+        for (ConsultantEntity consultantEntity : consultantEntities) {
+            consultants.add(ConsultantEntityMapper.consultantEntityToDomainConsultant(consultantEntity));
+        }
+        return consultants;
     }
 }
