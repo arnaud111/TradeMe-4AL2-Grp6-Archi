@@ -35,7 +35,7 @@ public class ConsultantMapper {
 
     public static Consultant consultantEntityToDomainConsultant(ConsultantEntity consultantEntity) {
 
-        Consultant consultant = new Consultant(new AccountId(UUID.randomUUID()));
+        Consultant consultant = new Consultant(AccountId.of(consultantEntity.getId()));
         consultant.setAdr(consultantEntity.getAdr());
         consultant.setAvailability(consultantEntity.getAvailability());
         consultant.setModality(consultantEntity.getModality());
