@@ -33,9 +33,10 @@ public class UpdateConsultantService implements UpdateConsultantUseCase {
         if (command.adr != null) consultant.setAdr(command.adr);
         if (command.availability != null) consultant.setAvailability(command.availability);
         if (command.modality != null) consultant.setModality(command.modality);
-        consultant.addRecordedEvents(new ConsultantUpdatedApplicationEvent(accountId));
+        ConsultantUpdatedApplicationEvent consultantUpdatedApplicationEvent = new ConsultantUpdatedApplicationEvent(accountId);
+        consultant.addRecordedEvents(consultantUpdatedApplicationEvent);
         updateConsultantPort.update(consultant);
-        eventDispatcher.dispatch(new ConsultantUpdatedApplicationEvent(accountId));
+        eventDispatcher.dispatch(consultantUpdatedApplicationEvent);
         return consultant;
     }
 }
