@@ -9,6 +9,9 @@ import java.util.stream.Collectors;
 public class ConsultantApiMapper {
 
     public static ConsultantResponse consultantToConsultantResponse(Consultant consultant) {
+
+        if (consultant == null) return null;
+
         return new ConsultantResponse(
                 consultant.id().value(),
                 consultant.getAdr(),
@@ -21,6 +24,9 @@ public class ConsultantApiMapper {
     }
 
     public static List<ConsultantResponse> consultantsToConsultantResponses(List<Consultant> consultants) {
+
+        if (consultants == null) return null;
+
         return consultants.stream()
                 .map(ConsultantApiMapper::consultantToConsultantResponse)
                 .collect(Collectors.toList());

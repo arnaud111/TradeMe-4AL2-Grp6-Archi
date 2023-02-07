@@ -17,6 +17,9 @@ import java.util.stream.Collectors;
 public class OfferEntityMapper {
 
     public static OfferEntity domainOfferToOfferEntity(Offer offer) {
+
+        if (offer == null) return null;
+
         GsonBuilder gsonBuilder = new GsonBuilder();
         final Gson gson = gsonBuilder.create();
 
@@ -33,6 +36,8 @@ public class OfferEntityMapper {
 
     public static Offer offerEntityToDomainOffer(OfferEntity offerEntity) {
 
+        if (offerEntity == null) return null;
+
         Offer offer = new Offer(OfferId.of(offerEntity.getId()), AccountId.of(offerEntity.getCreatorAccountId()));
         offer.setDescription(offerEntity.getDescription());
         offer.setTitle(offerEntity.getTitle());
@@ -41,6 +46,9 @@ public class OfferEntityMapper {
     }
 
     public static List<Offer> offerEntitiesToDomainOffers(List<OfferEntity> offerEntities) {
+
+        if (offerEntities == null) return null;
+
         List<Offer> offers = new ArrayList<>();
         for (OfferEntity offerEntity : offerEntities) {
             offers.add(OfferEntityMapper.offerEntityToDomainOffer(offerEntity));

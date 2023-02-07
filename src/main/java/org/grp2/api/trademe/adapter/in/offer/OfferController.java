@@ -6,6 +6,7 @@ import org.grp2.api.trademe.adapter.in.offer.response.CreateOfferResponse;
 import org.grp2.api.trademe.adapter.in.offer.response.OfferResponse;
 import org.grp2.api.trademe.application.port.in.command.offer.CreateOfferCommand;
 import org.grp2.api.trademe.application.port.in.command.offer.FindAllOfferCommand;
+import org.grp2.api.trademe.application.port.in.command.offer.FindByIdOfferCommand;
 import org.grp2.api.trademe.domain.dto.account.AccountId;
 import org.grp2.api.trademe.domain.dto.offer.Offer;
 import org.grp2.kernel.CommandBus;
@@ -38,6 +39,12 @@ public final class OfferController {
                 createOfferRequest.getDescription()
         ));
         return new CreateOfferResponse(offerId);
+    }
+
+    @GetMapping("/get/{id}")
+    public OfferResponse getById(@PathVariable("id") String id) {
+        var offer = (Offer) commandBus.post(new FindByIdOfferCommand(id));
+        return OfferApiMapper.offerToOfferResponse(offer);
     }
 
     @GetMapping("/get")

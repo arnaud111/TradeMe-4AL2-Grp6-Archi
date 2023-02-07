@@ -9,6 +9,9 @@ import java.util.stream.Collectors;
 public class ClientApiMapper {
 
     public static ClientResponse clientToClientResponse(Client client) {
+
+        if (client == null) return null;
+
         return new ClientResponse(
                 client.id().value(),
                 client.getEmail(),
@@ -18,6 +21,9 @@ public class ClientApiMapper {
     }
 
     public static List<ClientResponse> clientsToClientResponses(List<Client> clients) {
+
+        if (clients == null) return null;
+
         return clients.stream()
                 .map(ClientApiMapper::clientToClientResponse)
                 .collect(Collectors.toList());

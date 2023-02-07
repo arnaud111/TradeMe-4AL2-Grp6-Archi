@@ -14,6 +14,9 @@ import java.util.stream.Collectors;
 public class ConsultantEntityMapper {
 
     public static ConsultantEntity domainConsultantToConsultantEntity(Consultant consultant) {
+
+        if (consultant == null) return null;
+
         GsonBuilder gsonBuilder = new GsonBuilder();
         final Gson gson = gsonBuilder.create();
 
@@ -35,6 +38,8 @@ public class ConsultantEntityMapper {
 
     public static Consultant consultantEntityToDomainConsultant(ConsultantEntity consultantEntity) {
 
+        if (consultantEntity == null) return null;
+
         Consultant consultant = new Consultant(AccountId.of(consultantEntity.getId()));
         consultant.setAdr(consultantEntity.getAdr());
         consultant.setAvailability(consultantEntity.getAvailability());
@@ -49,6 +54,9 @@ public class ConsultantEntityMapper {
     }
 
     public static List<Consultant> consultantEntitiesToDomainConsultants(List<ConsultantEntity> consultantEntities) {
+
+        if (consultantEntities == null) return null;
+
         List<Consultant> consultants = new ArrayList<>();
         for (ConsultantEntity consultantEntity : consultantEntities) {
             consultants.add(ConsultantEntityMapper.consultantEntityToDomainConsultant(consultantEntity));

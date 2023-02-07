@@ -16,6 +16,9 @@ import java.util.stream.Collectors;
 public class ClientEntityMapper {
 
     public static ClientEntity domainClientToClientEntity(Client client) {
+
+        if (client == null) return null;
+
         GsonBuilder gsonBuilder = new GsonBuilder();
         final Gson gson = gsonBuilder.create();
 
@@ -33,6 +36,8 @@ public class ClientEntityMapper {
 
     public static Client clientEntityToDomainClient(ClientEntity clientEntity) {
 
+        if (clientEntity == null) return null;
+
         Client client = new Client(AccountId.of(clientEntity.getId()));
         client.setEmail(clientEntity.getEmail());
         client.setPassword(clientEntity.getPassword());
@@ -43,6 +48,9 @@ public class ClientEntityMapper {
     }
 
     public static List<Client> clientEntitiesToDomainClients(List<ClientEntity> clientEntities) {
+
+        if (clientEntities == null) return null;
+
         List<Client> clients = new ArrayList<>();
         for (ClientEntity clientEntity : clientEntities) {
             clients.add(ClientEntityMapper.clientEntityToDomainClient(clientEntity));
