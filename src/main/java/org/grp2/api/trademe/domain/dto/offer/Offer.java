@@ -57,4 +57,8 @@ public class Offer {
     public List<Event> getRecordedEvents() {
         return recordedEvents;
     }
+
+    public void addRecordedEvents(Event event) {
+        recordedEvents.add(event);
+    }
 }

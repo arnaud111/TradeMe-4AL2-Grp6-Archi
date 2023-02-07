@@ -83,4 +83,8 @@ public class Account {
     public List<Event> getRecordedEvents() {
         return Collections.unmodifiableList(recordedEvents);
     }
+
+    public void addRecordedEvents(Event event) {
+        recordedEvents.add(event);
+    }
 }
