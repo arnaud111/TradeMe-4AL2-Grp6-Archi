@@ -16,7 +16,7 @@ public class FindByIdOfferService implements FindByIdOfferUseCase {
     }
 
     @Override
-    public Offer handle(FindByIdOfferCommand command) {
+    public Offer handle(FindByIdOfferCommand command) throws OfferException {
         OfferId offerId = OfferId.of(command.id);
         Offer offer = this.loadOfferPort.load(offerId);
         if (offer == null) throw OfferException.notFoundOfferId(offerId);

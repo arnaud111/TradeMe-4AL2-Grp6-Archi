@@ -2,7 +2,7 @@ package org.grp2.api.trademe.adapter.out.persistence;
 
 import org.grp2.api.trademe.adapter.out.entity.ConsultantEntity;
 import org.grp2.api.trademe.adapter.out.repository.ConsultantEntityRepository;
-import org.grp2.api.trademe.application.mapper.ConsultantEntityMapper;
+import org.grp2.api.trademe.adapter.out.mapper.ConsultantEntityMapper;
 import org.grp2.api.trademe.application.port.out.account.consultant.CreateConsultantPort;
 import org.grp2.api.trademe.application.port.out.account.consultant.FindAllConsultantPort;
 import org.grp2.api.trademe.application.port.out.account.consultant.LoadConsultantPort;

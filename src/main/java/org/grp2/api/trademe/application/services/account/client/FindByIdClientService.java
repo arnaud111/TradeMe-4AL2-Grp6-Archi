@@ -16,7 +16,7 @@ public class FindByIdClientService implements FindByIdClientUseCase {
     }
 
     @Override
-    public Client handle(FindByIdClientCommand command) {
+    public Client handle(FindByIdClientCommand command) throws ClientException {
         AccountId accountId = AccountId.of(command.id);
         Client client = this.loadClientPort.load(accountId);
         if (client == null) throw ClientException.notFoundAccountId(accountId);

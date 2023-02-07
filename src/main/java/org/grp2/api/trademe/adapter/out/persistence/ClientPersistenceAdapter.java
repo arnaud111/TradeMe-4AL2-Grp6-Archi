@@ -2,7 +2,7 @@ package org.grp2.api.trademe.adapter.out.persistence;
 
 import org.grp2.api.trademe.adapter.out.entity.ClientEntity;
 import org.grp2.api.trademe.adapter.out.repository.ClientEntityRepository;
-import org.grp2.api.trademe.application.mapper.ClientEntityMapper;
+import org.grp2.api.trademe.adapter.out.mapper.ClientEntityMapper;
 import org.grp2.api.trademe.application.port.out.account.client.CreateClientPort;
 import org.grp2.api.trademe.application.port.out.account.client.FindAllClientPort;
 import org.grp2.api.trademe.application.port.out.account.client.LoadClientPort;

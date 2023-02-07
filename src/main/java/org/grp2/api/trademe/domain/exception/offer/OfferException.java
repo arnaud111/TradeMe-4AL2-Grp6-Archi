@@ -2,7 +2,7 @@ package org.grp2.api.trademe.domain.exception.offer;
 
 import org.grp2.api.trademe.domain.dto.offer.OfferId;
 
-public class OfferException extends RuntimeException {
+public final class OfferException extends RuntimeException {
 
     private OfferException(String message) {
         super(message);

@@ -1,6 +1,6 @@
 package org.grp2.api.trademe.adapter.in.mapper;
 
-import org.grp2.api.trademe.adapter.in.account.consultant.response.ConsultantResponse;
+import org.grp2.api.trademe.adapter.in.controller.account.consultant.response.ConsultantResponse;
 import org.grp2.api.trademe.domain.dto.account.consultant.Consultant;
 
 import java.util.List;

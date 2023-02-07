@@ -1,6 +1,6 @@
 package org.grp2.api.trademe.adapter.in.mapper;
 
-import org.grp2.api.trademe.adapter.in.offer.response.OfferResponse;
+import org.grp2.api.trademe.adapter.in.controller.offer.response.OfferResponse;
 import org.grp2.api.trademe.domain.dto.offer.Offer;
 
 import java.util.List;

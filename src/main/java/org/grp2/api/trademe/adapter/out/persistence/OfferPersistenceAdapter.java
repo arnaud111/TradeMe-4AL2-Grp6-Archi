@@ -2,7 +2,7 @@ package org.grp2.api.trademe.adapter.out.persistence;
 
 import org.grp2.api.trademe.adapter.out.entity.OfferEntity;
 import org.grp2.api.trademe.adapter.out.repository.OfferEntityRepository;
-import org.grp2.api.trademe.application.mapper.OfferEntityMapper;
+import org.grp2.api.trademe.adapter.out.mapper.OfferEntityMapper;
 import org.grp2.api.trademe.application.port.out.offer.CreateOfferPort;
 import org.grp2.api.trademe.application.port.out.offer.FindAllOfferPort;
 import org.grp2.api.trademe.application.port.out.offer.LoadOfferPort;
