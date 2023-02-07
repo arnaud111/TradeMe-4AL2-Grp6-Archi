@@ -3,18 +3,20 @@ package org.grp2.api.trademe.adapter.out.persistence;
 import org.grp2.api.trademe.adapter.out.entity.ConsultantEntity;
 import org.grp2.api.trademe.adapter.out.repository.ConsultantEntityRepository;
 import org.grp2.api.trademe.adapter.out.mapper.ConsultantEntityMapper;
-import org.grp2.api.trademe.application.port.out.account.consultant.CreateConsultantPort;
-import org.grp2.api.trademe.application.port.out.account.consultant.FindAllConsultantPort;
-import org.grp2.api.trademe.application.port.out.account.consultant.LoadConsultantPort;
-import org.grp2.api.trademe.application.port.out.account.consultant.UpdateConsultantPort;
+import org.grp2.api.trademe.application.port.out.account.consultant.*;
 import org.grp2.api.trademe.domain.dto.account.consultant.Consultant;
 import org.grp2.api.trademe.domain.dto.account.AccountId;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.data.jpa.domain.Specification;
 
+import javax.persistence.criteria.Predicate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-public class ConsultantPersistenceAdapter implements FindAllConsultantPort, LoadConsultantPort, UpdateConsultantPort, CreateConsultantPort {
+public class ConsultantPersistenceAdapter implements FindAllConsultantPort, FindAllMatchConsultantPort, LoadConsultantPort, UpdateConsultantPort, CreateConsultantPort {
 
     private final ConsultantEntityRepository consultantEntityRepository;
 
@@ -51,5 +53,26 @@ public class ConsultantPersistenceAdapter implements FindAllConsultantPort, Load
     @Override
     public List<Consultant> findAll() {
         return ConsultantEntityMapper.consultantEntitiesToDomainConsultants(consultantEntityRepository.findAll());
+    }
+
+    @Override
+    public List<Consultant> findAllMatch(String name, String lastName, Integer adrMin, Integer adrMax) {
+        Specification<ConsultantEntity> specification = (root, query, builder) -> {
+            Predicate predicate = builder.conjunction();
+            if (name != null) {
+                predicate = builder.and(predicate, builder.like(root.get("name"), "%" + name + "%"));
+            }
+            if (lastName != null) {
+                predicate = builder.and(predicate, builder.like(root.get("lastName"), "%" + lastName + "%"));
+            }
+            if (adrMin != null) {
+                predicate = builder.and(predicate, builder.greaterThanOrEqualTo(root.get("adr"), adrMin));
+            }
+            if (adrMax != null) {
+                predicate = builder.and(predicate, builder.lessThanOrEqualTo(root.get("adr"), adrMax));
+            }
+            return predicate;
+        };
+        return ConsultantEntityMapper.consultantEntitiesToDomainConsultants(consultantEntityRepository.findAll(specification));
     }
 }

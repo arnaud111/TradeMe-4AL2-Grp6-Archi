@@ -1,14 +1,12 @@
 package org.grp2.api.trademe.adapter.in.controller.account.consultant;
 
 import org.grp2.api.trademe.adapter.in.controller.account.consultant.request.CreateConsultantRequest;
+import org.grp2.api.trademe.adapter.in.controller.account.consultant.request.FindConsultantRequest;
 import org.grp2.api.trademe.adapter.in.controller.account.consultant.request.UpdateConsultantRequest;
 import org.grp2.api.trademe.adapter.in.controller.account.consultant.response.CreateConsultantResponse;
 import org.grp2.api.trademe.adapter.in.controller.account.consultant.response.ConsultantResponse;
 import org.grp2.api.trademe.adapter.in.mapper.ConsultantApiMapper;
-import org.grp2.api.trademe.application.port.in.command.account.consultant.CreateConsultantCommand;
-import org.grp2.api.trademe.application.port.in.command.account.consultant.FindByIdConsultantCommand;
-import org.grp2.api.trademe.application.port.in.command.account.consultant.UpdateConsultantCommand;
-import org.grp2.api.trademe.application.port.in.command.account.consultant.FindAllConsultantCommand;
+import org.grp2.api.trademe.application.port.in.command.account.consultant.*;
 import org.grp2.api.trademe.domain.dto.account.consultant.Consultant;
 import org.grp2.kernel.CommandBus;
 import org.grp2.kernel.QueryBus;
@@ -54,6 +52,17 @@ public final class ConsultantController {
     @GetMapping("/get")
     public List<ConsultantResponse> getAll() {
         var consultants = (List<Consultant>) commandBus.post(new FindAllConsultantCommand());
+        return ConsultantApiMapper.consultantsToConsultantResponses(consultants);
+    }
+
+    @GetMapping("/find")
+    public List<ConsultantResponse> find(@RequestParam(required=false) String name, @RequestParam(required=false) String lastName, @RequestParam(required=false) Integer adrMin, @RequestParam(required=false) Integer adrMax, @RequestParam(required=false) List<String> skills) {
+        var consultants = (List<Consultant>) commandBus.post(new FindAllMatchConsultantCommand(
+                name,
+                lastName,
+                adrMin,
+                adrMax
+        ));
         return ConsultantApiMapper.consultantsToConsultantResponses(consultants);
     }
 

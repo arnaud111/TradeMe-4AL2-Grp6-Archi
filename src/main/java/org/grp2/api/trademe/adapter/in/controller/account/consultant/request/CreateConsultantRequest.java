@@ -10,13 +10,9 @@ public class CreateConsultantRequest {
     private String password;
     private String name;
     private String lastName;
-    @JsonProperty(required = false)
     private Integer adr;
-    @JsonProperty(required = false)
     private String availability;
-    @JsonProperty(required = false)
     private String modality;
-    @JsonProperty(required = false)
     private ArrayList<String> skills;
 
     public String getEmail() {

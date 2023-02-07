@@ -14,10 +14,7 @@ import org.grp2.api.trademe.application.events.offer.OfferCreatedEventHandler;
 import org.grp2.api.trademe.application.services.account.client.CreateClientService;
 import org.grp2.api.trademe.application.services.account.client.FindAllClientService;
 import org.grp2.api.trademe.application.services.account.client.FindByIdClientService;
-import org.grp2.api.trademe.application.services.account.consultant.CreateConsultantService;
-import org.grp2.api.trademe.application.services.account.consultant.FindAllConsultantService;
-import org.grp2.api.trademe.application.services.account.consultant.FindByIdConsultantService;
-import org.grp2.api.trademe.application.services.account.consultant.UpdateConsultantService;
+import org.grp2.api.trademe.application.services.account.consultant.*;
 import org.grp2.api.trademe.application.services.offer.CreateOfferService;
 import org.grp2.api.trademe.application.services.offer.FindAllOfferService;
 import org.grp2.api.trademe.application.services.offer.FindByIdOfferService;
@@ -72,6 +69,11 @@ public class ApplicationConfiguration {
     @Bean
     public FindAllConsultantService findAllConsultantService() {
         return new FindAllConsultantService(consultantPersistenceAdapter());
+    }
+
+    @Bean
+    public FindAllMatchConsultantService findAllMatchConsultantService() {
+        return new FindAllMatchConsultantService(consultantPersistenceAdapter());
     }
 
     @Bean

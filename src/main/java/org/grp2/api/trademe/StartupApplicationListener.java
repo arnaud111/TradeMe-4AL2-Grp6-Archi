@@ -11,20 +11,14 @@ import org.grp2.api.trademe.application.events.offer.OfferCreatedEventHandler;
 import org.grp2.api.trademe.application.port.in.command.account.client.CreateClientCommand;
 import org.grp2.api.trademe.application.port.in.command.account.client.FindAllClientCommand;
 import org.grp2.api.trademe.application.port.in.command.account.client.FindByIdClientCommand;
-import org.grp2.api.trademe.application.port.in.command.account.consultant.CreateConsultantCommand;
-import org.grp2.api.trademe.application.port.in.command.account.consultant.FindAllConsultantCommand;
-import org.grp2.api.trademe.application.port.in.command.account.consultant.FindByIdConsultantCommand;
-import org.grp2.api.trademe.application.port.in.command.account.consultant.UpdateConsultantCommand;
+import org.grp2.api.trademe.application.port.in.command.account.consultant.*;
 import org.grp2.api.trademe.application.port.in.command.offer.CreateOfferCommand;
 import org.grp2.api.trademe.application.port.in.command.offer.FindAllOfferCommand;
 import org.grp2.api.trademe.application.port.in.command.offer.FindByIdOfferCommand;
 import org.grp2.api.trademe.application.services.account.client.CreateClientService;
 import org.grp2.api.trademe.application.services.account.client.FindAllClientService;
 import org.grp2.api.trademe.application.services.account.client.FindByIdClientService;
-import org.grp2.api.trademe.application.services.account.consultant.CreateConsultantService;
-import org.grp2.api.trademe.application.services.account.consultant.FindAllConsultantService;
-import org.grp2.api.trademe.application.services.account.consultant.FindByIdConsultantService;
-import org.grp2.api.trademe.application.services.account.consultant.UpdateConsultantService;
+import org.grp2.api.trademe.application.services.account.consultant.*;
 import org.grp2.api.trademe.application.services.offer.CreateOfferService;
 import org.grp2.api.trademe.application.services.offer.FindAllOfferService;
 import org.grp2.api.trademe.application.services.offer.FindByIdOfferService;
@@ -43,6 +37,7 @@ public class StartupApplicationListener implements ApplicationListener<ContextRe
     private final CreateConsultantService createConsultantService;
     private final FindByIdConsultantService findByIdConsultantService;
     private final FindAllConsultantService findAllConsultantService;
+    private final FindAllMatchConsultantService findAllMatchConsultantService;
     private final UpdateConsultantService updateConsultantService;
     private final CreateClientService createClientService;
     private final FindByIdClientService findByIdClientService;
@@ -56,12 +51,13 @@ public class StartupApplicationListener implements ApplicationListener<ContextRe
     private final ClientCreatedEventHandler clientCreatedEventHandler;
     private final OfferCreatedEventHandler offerCreatedEventHandler;
 
-    public StartupApplicationListener(CommandBus commandBus, QueryBus queryBus, CreateConsultantService createConsultantService, FindByIdConsultantService findByIdConsultantService, FindAllConsultantService findAllConsultantService, UpdateConsultantService updateConsultantService, CreateClientService createClientService, FindByIdClientService findByIdClientService, FindAllClientService findAllClientService, CreateOfferService createOfferService, FindByIdOfferService findByIdOfferService, FindAllOfferService findAllOfferService, EventDispatcher eventDispatcher, ConsultantCreatedEventHandler consultantCreatedEventHandler, ConsultantUpdatedEventHandler consultantUpdatedEventHandler, ClientCreatedEventHandler clientCreatedEventHandler, OfferCreatedEventHandler offerCreatedEventHandler) {
+    public StartupApplicationListener(CommandBus commandBus, QueryBus queryBus, CreateConsultantService createConsultantService, FindByIdConsultantService findByIdConsultantService, FindAllConsultantService findAllConsultantService, FindAllMatchConsultantService findAllMatchConsultantService, UpdateConsultantService updateConsultantService, CreateClientService createClientService, FindByIdClientService findByIdClientService, FindAllClientService findAllClientService, CreateOfferService createOfferService, FindByIdOfferService findByIdOfferService, FindAllOfferService findAllOfferService, EventDispatcher eventDispatcher, ConsultantCreatedEventHandler consultantCreatedEventHandler, ConsultantUpdatedEventHandler consultantUpdatedEventHandler, ClientCreatedEventHandler clientCreatedEventHandler, OfferCreatedEventHandler offerCreatedEventHandler) {
         this.commandBus = commandBus;
         this.queryBus = queryBus;
         this.createConsultantService = createConsultantService;
         this.findByIdConsultantService = findByIdConsultantService;
         this.findAllConsultantService = findAllConsultantService;
+        this.findAllMatchConsultantService = findAllMatchConsultantService;
         this.updateConsultantService = updateConsultantService;
         this.createClientService = createClientService;
         this.findByIdClientService = findByIdClientService;
@@ -91,6 +87,8 @@ public class StartupApplicationListener implements ApplicationListener<ContextRe
         commandBus.register(FindByIdConsultantCommand.class, findByIdConsultantService);
 
         commandBus.register(FindAllConsultantCommand.class, findAllConsultantService);
+
+        commandBus.register(FindAllMatchConsultantCommand.class, findAllMatchConsultantService);
 
         commandBus.register(UpdateConsultantCommand.class, updateConsultantService);
 
