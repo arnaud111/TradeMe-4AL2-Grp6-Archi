@@ -7,7 +7,6 @@ import org.grp2.api.trademe.adapter.out.entity.EventEntity;
 import org.grp2.api.trademe.adapter.out.entity.OfferEntity;
 import org.grp2.api.trademe.domain.dto.account.AccountId;
 import org.grp2.api.trademe.domain.dto.account.client.Client;
-import org.grp2.api.trademe.domain.dto.offer.Offer;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -5,6 +5,7 @@ import org.grp2.api.trademe.application.port.in.usecase.offer.FindByIdOfferUseCa
 import org.grp2.api.trademe.application.port.out.offer.LoadOfferPort;
 import org.grp2.api.trademe.domain.dto.offer.Offer;
 import org.grp2.api.trademe.domain.dto.offer.OfferId;
+import org.grp2.api.trademe.domain.exception.offer.OfferException;
 
 public class FindByIdOfferService implements FindByIdOfferUseCase {
 
@@ -16,6 +17,9 @@ public class FindByIdOfferService implements FindByIdOfferUseCase {
 
     @Override
     public Offer handle(FindByIdOfferCommand command) {
-        return this.loadOfferPort.load(OfferId.of(command.id));
+        OfferId offerId = OfferId.of(command.id);
+        Offer offer = this.loadOfferPort.load(offerId);
+        if (offer == null) throw OfferException.notFoundOfferId(offerId);
+        return offer;
     }
 }

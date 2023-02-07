@@ -10,6 +10,6 @@ public final class AccountException extends RuntimeException {
     }
 
     public static AccountException notFoundAccountId(AccountId accountId) {
-        return new AccountException(String.format("%s not found.", accountId.value()));
+        return new AccountException(String.format("Account: %s not found.", accountId.value()));
     }
 }

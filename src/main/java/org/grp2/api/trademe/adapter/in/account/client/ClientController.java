@@ -8,6 +8,7 @@ import org.grp2.api.trademe.application.port.in.command.account.client.CreateCli
 import org.grp2.api.trademe.application.port.in.command.account.client.FindAllClientCommand;
 import org.grp2.api.trademe.application.port.in.command.account.client.FindByIdClientCommand;
 import org.grp2.api.trademe.domain.dto.account.client.Client;
+import org.grp2.api.trademe.domain.exception.account.client.ClientException;
 import org.grp2.kernel.CommandBus;
 import org.grp2.kernel.QueryBus;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +42,7 @@ public class ClientController {
     }
 
     @GetMapping("/get/{id}")
-    public ClientResponse getById(@PathVariable("id") String id) {
+    public ClientResponse getById(@PathVariable("id") String id) throws ClientException {
         var client = (Client) commandBus.post(new FindByIdClientCommand(id));
         return ClientApiMapper.clientToClientResponse(client);
     }

@@ -5,6 +5,7 @@ import org.grp2.api.trademe.application.port.in.usecase.account.client.FindByIdC
 import org.grp2.api.trademe.application.port.out.account.client.LoadClientPort;
 import org.grp2.api.trademe.domain.dto.account.AccountId;
 import org.grp2.api.trademe.domain.dto.account.client.Client;
+import org.grp2.api.trademe.domain.exception.account.client.ClientException;
 
 public class FindByIdClientService implements FindByIdClientUseCase {
 
@@ -16,6 +17,9 @@ public class FindByIdClientService implements FindByIdClientUseCase {
 
     @Override
     public Client handle(FindByIdClientCommand command) {
-        return this.loadClientPort.load(AccountId.of(command.id));
+        AccountId accountId = AccountId.of(command.id);
+        Client client = this.loadClientPort.load(accountId);
+        if (client == null) throw ClientException.notFoundAccountId(accountId);
+        return client;
     }
 }

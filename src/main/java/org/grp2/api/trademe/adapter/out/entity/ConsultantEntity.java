@@ -3,7 +3,6 @@ package org.grp2.api.trademe.adapter.out.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity

@@ -1,14 +1,15 @@
 package org.grp2.api.trademe.adapter.in.offer;
 
+import org.grp2.api.trademe.adapter.in.offer.response.OfferResponse;
 import org.grp2.api.trademe.adapter.in.mapper.OfferApiMapper;
 import org.grp2.api.trademe.adapter.in.offer.request.CreateOfferRequest;
 import org.grp2.api.trademe.adapter.in.offer.response.CreateOfferResponse;
-import org.grp2.api.trademe.adapter.in.offer.response.OfferResponse;
 import org.grp2.api.trademe.application.port.in.command.offer.CreateOfferCommand;
 import org.grp2.api.trademe.application.port.in.command.offer.FindAllOfferCommand;
 import org.grp2.api.trademe.application.port.in.command.offer.FindByIdOfferCommand;
 import org.grp2.api.trademe.domain.dto.account.AccountId;
 import org.grp2.api.trademe.domain.dto.offer.Offer;
+import org.grp2.api.trademe.domain.exception.offer.OfferException;
 import org.grp2.kernel.CommandBus;
 import org.grp2.kernel.QueryBus;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +43,7 @@ public final class OfferController {
     }
 
     @GetMapping("/get/{id}")
-    public OfferResponse getById(@PathVariable("id") String id) {
+    public OfferResponse getById(@PathVariable("id") String id) throws OfferException {
         var offer = (Offer) commandBus.post(new FindByIdOfferCommand(id));
         return OfferApiMapper.offerToOfferResponse(offer);
     }

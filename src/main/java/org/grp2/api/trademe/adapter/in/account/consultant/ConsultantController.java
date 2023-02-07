@@ -10,6 +10,7 @@ import org.grp2.api.trademe.application.port.in.command.account.consultant.FindB
 import org.grp2.api.trademe.application.port.in.command.account.consultant.UpdateConsultantCommand;
 import org.grp2.api.trademe.application.port.in.command.account.consultant.FindAllConsultantCommand;
 import org.grp2.api.trademe.domain.dto.account.consultant.Consultant;
+import org.grp2.api.trademe.domain.exception.account.consultant.ConsultantException;
 import org.grp2.kernel.CommandBus;
 import org.grp2.kernel.QueryBus;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +47,7 @@ public final class ConsultantController {
     }
 
     @GetMapping("/get/{id}")
-    public ConsultantResponse getById(@PathVariable("id") String id) {
+    public ConsultantResponse getById(@PathVariable("id") String id) throws ConsultantException {
         var consultant = (Consultant) commandBus.post(new FindByIdConsultantCommand(id));
         return ConsultantApiMapper.consultantToConsultantResponse(consultant);
     }

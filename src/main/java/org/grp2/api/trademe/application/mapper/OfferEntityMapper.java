@@ -6,7 +6,6 @@ import org.grp2.api.trademe.adapter.out.entity.ConsultantEntity;
 import org.grp2.api.trademe.adapter.out.entity.EventEntity;
 import org.grp2.api.trademe.adapter.out.entity.OfferEntity;
 import org.grp2.api.trademe.domain.dto.account.AccountId;
-import org.grp2.api.trademe.domain.dto.account.consultant.Consultant;
 import org.grp2.api.trademe.domain.dto.offer.Offer;
 import org.grp2.api.trademe.domain.dto.offer.OfferId;
 
