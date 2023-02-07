@@ -56,7 +56,7 @@ public final class ConsultantController {
     }
 
     @GetMapping("/find")
-    public List<ConsultantResponse> find(@RequestParam(required=false) String name, @RequestParam(required=false) String lastName, @RequestParam(required=false) Integer adrMin, @RequestParam(required=false) Integer adrMax, @RequestParam(required=false) List<String> skills) {
+    public List<ConsultantResponse> find(@RequestParam(required=false) String name, @RequestParam(required=false) String lastName, @RequestParam(required=false) Integer adrMin, @RequestParam(required=false) Integer adrMax) {
         var consultants = (List<Consultant>) commandBus.post(new FindAllMatchConsultantCommand(
                 name,
                 lastName,
