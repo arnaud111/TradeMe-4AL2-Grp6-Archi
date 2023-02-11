@@ -1,6 +1,6 @@
 package org.grp2.api.trademe.application.services.account.client;
 
-import org.grp2.api.trademe.application.events.account.consultant.ConsultantCreatedApplicationEvent;
+import org.grp2.api.trademe.application.events.account.client.ClientCreatedApplicationEvent;
 import org.grp2.api.trademe.application.port.in.command.account.client.CreateClientCommand;
 import org.grp2.api.trademe.application.port.in.usecase.account.client.CreateClientUseCase;
 import org.grp2.api.trademe.application.port.out.account.client.CreateClientPort;
@@ -27,7 +27,7 @@ public class CreateClientService implements CreateClientUseCase {
         client.setPassword(command.password);
         client.setEmail(command.email);
         createClientPort.save(client);
-        eventDispatcher.dispatch(new ConsultantCreatedApplicationEvent(accountId));
+        eventDispatcher.dispatch(new ClientCreatedApplicationEvent(accountId));
         return accountId.value();
     }
 }
