@@ -25,7 +25,7 @@ jobs:
     - name: Set up gcloud
       uses: google-github-actions/setup-gcloud@v0
       with:
-        version: '331.0.0'
+        version: '318.0.0'
         project_id: devops-kube-4al2
         service_account_key: ${{ secrets.GKE_SA_KEY }}
         
