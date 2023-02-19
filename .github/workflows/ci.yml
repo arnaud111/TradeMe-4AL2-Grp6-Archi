@@ -3,7 +3,7 @@ name: GKE Deployment
 on:
   push:
     branches:
-      - kube-1
+      - main
 
 jobs:
   deploy:
