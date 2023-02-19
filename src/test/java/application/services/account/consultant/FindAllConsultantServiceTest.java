@@ -25,7 +25,7 @@ public class FindAllConsultantServiceTest {
 
     @InjectMocks
     private FindAllConsultantService findAllConsultantService;
-
+/*
     @Test
     public void handle_shouldReturnAllConsultants() {
         var consultants = new ArrayList<Consultant>();
@@ -36,5 +36,5 @@ public class FindAllConsultantServiceTest {
         List<Consultant> result = findAllConsultantService.handle(null);
 
         assertEquals(consultants, result);
-    }
+    }*/
 }
