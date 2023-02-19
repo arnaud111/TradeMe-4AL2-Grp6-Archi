@@ -82,7 +82,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>org.grp2.api.Application</mainClass>
+                    <mainClass>org.grp2.api.trademe.Application</mainClass>
                     <layout>JAR</layout>
                 </configuration>
             </plugin>
