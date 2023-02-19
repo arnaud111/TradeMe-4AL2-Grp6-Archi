@@ -48,6 +48,9 @@ jobs:
         push: true
         tags: gcr.io/devops-kube-4al2/trademe:latest
         
+    - name: Install gcloud component auth plugin
+      run: gcloud components install gke-gcloud-auth-plugin
+
     - name: Configure kubectl
       run: |
         gcloud container clusters get-credentials archi-cluster --zone=europe-west2
