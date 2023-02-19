@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trademe
+spec:
+  selector:
+    matchLabels:
+      app: trademe
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: trademe
+    spec:
+      containers:
+      - name: trademe
+        image: gcr.io/devops-kube-4al2/trademe:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: production
