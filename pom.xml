@@ -76,5 +76,16 @@
         <maven.compiler.target>19</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+         
+    <plugins>
+         <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                  <mainClass>com.baeldung.demo.DemoApplication</mainClass>
+                  <layout>JAR</layout>
+             </configuration>
+         </plugin>
+    </plugins>
 
 </project>
