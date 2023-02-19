@@ -22,10 +22,19 @@ jobs:
     - name: Build with Maven
       run: mvn clean install
       
-    - name: Set up gcloud
-      uses: google-github-actions/setup-gcloud@v0
+    - name: Setup python
+      uses: actions/setup-python@v4
       with:
-        version: '318.0.0'
+        python-version: '3.7'
+
+    - name: Export gcloud related env variable
+      run: export CLOUDSDK_PYTHON="/usr/bin/python3"
+
+      
+    - name: Set up gcloud
+      uses: google-github-actions/setup-gcloud@v1
+      with:
+        version: '331.0.0'
         project_id: devops-kube-4al2
         service_account_key: ${{ secrets.GKE_SA_KEY }}
         
