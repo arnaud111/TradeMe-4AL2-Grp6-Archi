@@ -50,7 +50,7 @@ jobs:
         
     - name: Configure kubectl
       run: |
-        gcloud container clusters get-credentials archi-cluster --zone=eu-west2
+        gcloud container clusters get-credentials archi-cluster --zone=europe-west2
         
     - name: Deploy API
       run: |
