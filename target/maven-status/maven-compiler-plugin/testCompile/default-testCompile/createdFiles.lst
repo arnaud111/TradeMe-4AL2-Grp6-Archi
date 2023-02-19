@@ -1,0 +1,11 @@
+application\services\offer\FindAllOfferServiceTest.class
+application\services\account\client\CreateClientServiceTest.class
+application\services\account\consultant\CreateConsultantServiceTest.class
+application\services\account\client\FindAllClientServiceTest.class
+application\services\account\consultant\FindAllMatchConsultantServiceTest.class
+application\services\account\consultant\FindAllConsultantServiceTest.class
+application\services\offer\FindByIdOfferServiceTest.class
+application\services\offer\CreateOfferServiceTest.class
+application\services\account\consultant\UpdateConsultantServiceTest.class
+application\services\account\client\FindByIdClientServiceTest.class
+application\services\account\consultant\FindByIdConsultantServiceTest.class
