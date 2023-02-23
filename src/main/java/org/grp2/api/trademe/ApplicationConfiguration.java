@@ -82,6 +82,16 @@ public class ApplicationConfiguration {
     }
 
     @Bean
+    public AddSkillConsultantService addSkillConsultantService() {
+        return new AddSkillConsultantService(consultantPersistenceAdapter(), consultantPersistenceAdapter(), eventDispatcher);
+    }
+
+    @Bean
+    public RemoveSkillConsultantService removeSkillConsultantService() {
+        return new RemoveSkillConsultantService(consultantPersistenceAdapter(), consultantPersistenceAdapter(), eventDispatcher);
+    }
+
+    @Bean
     public CreateClientService createClientService() {
         return new CreateClientService(clientPersistenceAdapter(), eventDispatcher);
     }

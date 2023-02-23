@@ -39,6 +39,8 @@ public class StartupApplicationListener implements ApplicationListener<ContextRe
     private final FindAllConsultantService findAllConsultantService;
     private final FindAllMatchConsultantService findAllMatchConsultantService;
     private final UpdateConsultantService updateConsultantService;
+    private final AddSkillConsultantService addSkillConsultantService;
+    private final RemoveSkillConsultantService removeSkillConsultantService;
     private final CreateClientService createClientService;
     private final FindByIdClientService findByIdClientService;
     private final FindAllClientService findAllClientService;
@@ -51,7 +53,7 @@ public class StartupApplicationListener implements ApplicationListener<ContextRe
     private final ClientCreatedEventHandler clientCreatedEventHandler;
     private final OfferCreatedEventHandler offerCreatedEventHandler;
 
-    public StartupApplicationListener(CommandBus commandBus, QueryBus queryBus, CreateConsultantService createConsultantService, FindByIdConsultantService findByIdConsultantService, FindAllConsultantService findAllConsultantService, FindAllMatchConsultantService findAllMatchConsultantService, UpdateConsultantService updateConsultantService, CreateClientService createClientService, FindByIdClientService findByIdClientService, FindAllClientService findAllClientService, CreateOfferService createOfferService, FindByIdOfferService findByIdOfferService, FindAllOfferService findAllOfferService, EventDispatcher eventDispatcher, ConsultantCreatedEventHandler consultantCreatedEventHandler, ConsultantUpdatedEventHandler consultantUpdatedEventHandler, ClientCreatedEventHandler clientCreatedEventHandler, OfferCreatedEventHandler offerCreatedEventHandler) {
+    public StartupApplicationListener(CommandBus commandBus, QueryBus queryBus, CreateConsultantService createConsultantService, FindByIdConsultantService findByIdConsultantService, FindAllConsultantService findAllConsultantService, FindAllMatchConsultantService findAllMatchConsultantService, UpdateConsultantService updateConsultantService, AddSkillConsultantService addSkillConsultantService, RemoveSkillConsultantService removeSkillConsultantService, CreateClientService createClientService, FindByIdClientService findByIdClientService, FindAllClientService findAllClientService, CreateOfferService createOfferService, FindByIdOfferService findByIdOfferService, FindAllOfferService findAllOfferService, EventDispatcher eventDispatcher, ConsultantCreatedEventHandler consultantCreatedEventHandler, ConsultantUpdatedEventHandler consultantUpdatedEventHandler, ClientCreatedEventHandler clientCreatedEventHandler, OfferCreatedEventHandler offerCreatedEventHandler) {
         this.commandBus = commandBus;
         this.queryBus = queryBus;
         this.createConsultantService = createConsultantService;
@@ -59,6 +61,8 @@ public class StartupApplicationListener implements ApplicationListener<ContextRe
         this.findAllConsultantService = findAllConsultantService;
         this.findAllMatchConsultantService = findAllMatchConsultantService;
         this.updateConsultantService = updateConsultantService;
+        this.addSkillConsultantService = addSkillConsultantService;
+        this.removeSkillConsultantService = removeSkillConsultantService;
         this.createClientService = createClientService;
         this.findByIdClientService = findByIdClientService;
         this.findAllClientService = findAllClientService;
@@ -91,6 +95,10 @@ public class StartupApplicationListener implements ApplicationListener<ContextRe
         commandBus.register(FindAllMatchConsultantCommand.class, findAllMatchConsultantService);
 
         commandBus.register(UpdateConsultantCommand.class, updateConsultantService);
+
+        commandBus.register(AddSkillConsultantCommand.class, addSkillConsultantService);
+
+        commandBus.register(RemoveSkillConsultantCommand.class, removeSkillConsultantService);
 
         commandBus.register(CreateClientCommand.class, createClientService);
 

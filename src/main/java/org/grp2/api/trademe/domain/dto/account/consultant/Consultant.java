@@ -50,6 +50,14 @@ public class Consultant extends Account {
         this.skills = skills;
     }
 
+    public void addSkill(String skill) {
+        this.skills.add(skill);
+    }
+
+    public void removeSkill(String skill) {
+        this.skills.remove(skill);
+    }
+
     public Integer getAdr() {
         return adr;
     }

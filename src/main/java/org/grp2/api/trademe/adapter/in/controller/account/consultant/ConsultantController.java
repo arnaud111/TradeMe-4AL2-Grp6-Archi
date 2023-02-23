@@ -1,7 +1,6 @@
 package org.grp2.api.trademe.adapter.in.controller.account.consultant;
 
 import org.grp2.api.trademe.adapter.in.controller.account.consultant.request.CreateConsultantRequest;
-import org.grp2.api.trademe.adapter.in.controller.account.consultant.request.FindConsultantRequest;
 import org.grp2.api.trademe.adapter.in.controller.account.consultant.request.UpdateConsultantRequest;
 import org.grp2.api.trademe.adapter.in.controller.account.consultant.response.CreateConsultantResponse;
 import org.grp2.api.trademe.adapter.in.controller.account.consultant.response.ConsultantResponse;
@@ -77,6 +76,18 @@ public final class ConsultantController {
                 updateConsultantRequest.getModality(),
                 updateConsultantRequest.getSkills()
         ));
+        return ConsultantApiMapper.consultantToConsultantResponse(consultant);
+    }
+
+    @PostMapping(value = "/addSkill/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ConsultantResponse addSkill(@RequestBody String skill, @PathVariable("id") String id) {
+        var consultant = (Consultant) commandBus.post(new AddSkillConsultantCommand(id, skill));
+        return ConsultantApiMapper.consultantToConsultantResponse(consultant);
+    }
+
+    @PostMapping(value = "/removeSkill/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ConsultantResponse removeSkill(@RequestBody String skill, @PathVariable("id") String id) {
+        var consultant = (Consultant) commandBus.post(new AddSkillConsultantCommand(id, skill));
         return ConsultantApiMapper.consultantToConsultantResponse(consultant);
     }
 }
