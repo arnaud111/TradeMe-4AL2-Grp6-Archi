@@ -13,6 +13,7 @@ C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\ja
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\port\in\usecase\account\consultant\FindByIdConsultantUseCase.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\events\account\consultant\ConsultantCreatedEventHandler.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\kernel\QueryBus.java
+C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\port\in\usecase\account\consultant\AddSkillConsultantUseCase.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\domain\exception\offer\OfferException.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\services\account\consultant\FindAllConsultantService.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\kernel\Query.java
@@ -27,6 +28,7 @@ C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\ja
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\port\out\account\consultant\CreateConsultantPort.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\port\in\command\account\consultant\FindByIdConsultantCommand.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\domain\exception\account\AccountException.java
+C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\port\in\command\account\consultant\AddSkillConsultantCommand.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\adapter\out\entity\EventEntity.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\services\account\client\FindByIdClientService.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\kernel\EventHandler.java
@@ -34,6 +36,7 @@ C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\ja
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\adapter\in\controller\account\consultant\request\UpdateConsultantRequest.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\port\in\command\account\client\CreateClientCommand.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\port\out\offer\FindAllOfferPort.java
+C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\services\account\consultant\RemoveSkillConsultantService.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\port\in\usecase\account\consultant\FindAllMatchConsultantUseCase.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\adapter\out\repository\ConsultantEntityRepository.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\domain\event\account\consultant\ConsultantUpdated.java
@@ -80,6 +83,7 @@ C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\ja
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\port\in\command\account\consultant\FindAllConsultantCommand.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\domain\event\offer\OfferCreated.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\kernel\CommandBus.java
+C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\services\account\consultant\AddSkillConsultantService.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\kernel\UseCaseValidator.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\events\offer\OfferCreatedEventHandler.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\port\in\command\offer\FindAllOfferCommand.java
@@ -103,6 +107,7 @@ C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\ja
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\kernel\BusFactory.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\kernel\EventDispatcher.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\adapter\out\persistence\ClientPersistenceAdapter.java
+C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\port\in\command\account\consultant\RemoveSkillConsultantCommand.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\port\out\offer\LoadOfferPort.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\port\in\usecase\account\client\CreateClientUseCase.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\port\in\command\account\consultant\UpdateConsultantCommand.java
@@ -112,6 +117,8 @@ C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\ja
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\events\account\consultant\ConsultantUpdatedApplicationEvent.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\StartupApplicationListener.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\adapter\out\persistence\OfferPersistenceAdapter.java
+C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\adapter\in\controller\account\consultant\request\SkillRequest.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\port\in\command\account\client\FindByIdClientCommand.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\kernel\DefaultCommandBus.java
 C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\port\in\usecase\account\client\FindByIdClientUseCase.java
+C:\Users\arnau\OneDrive\Documents\ESGI\Archi\TradeMe-4AL2-Grp6-Archi\src\main\java\org\grp2\api\trademe\application\port\in\usecase\account\consultant\RemoveSkillConsultantUseCase.java

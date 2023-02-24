@@ -2,9 +2,11 @@ org\grp2\api\trademe\application\services\account\consultant\FindByIdConsultantS
 org\grp2\api\trademe\domain\exception\account\client\ClientException.class
 org\grp2\api\trademe\application\port\in\usecase\account\consultant\UpdateConsultantUseCase.class
 org\grp2\api\trademe\adapter\out\entity\ClientEntity.class
+org\grp2\api\trademe\application\port\in\command\account\consultant\AddSkillConsultantCommand.class
 org\grp2\api\trademe\application\port\in\command\account\consultant\FindAllMatchConsultantCommand.class
 org\grp2\api\trademe\adapter\in\controller\account\client\response\ClientResponse.class
 org\grp2\api\trademe\application\port\in\usecase\offer\CreateOfferUseCase.class
+org\grp2\api\trademe\application\port\in\usecase\account\consultant\RemoveSkillConsultantUseCase.class
 org\grp2\api\trademe\application\port\in\usecase\offer\FindByIdOfferUseCase.class
 org\grp2\api\trademe\application\port\in\usecase\account\consultant\CreateConsultantUseCase.class
 org\grp2\api\trademe\domain\event\account\consultant\ConsultantUpdated.class
@@ -87,6 +89,7 @@ org\grp2\api\trademe\adapter\in\controller\account\consultant\ConsultantControll
 org\grp2\api\trademe\application\port\in\usecase\account\consultant\FindByIdConsultantUseCase.class
 org\grp2\api\trademe\application\events\account\consultant\ConsultantUpdatedEventHandler.class
 org\grp2\api\trademe\adapter\out\persistence\OfferPersistenceAdapter.class
+org\grp2\api\trademe\application\port\in\usecase\account\consultant\AddSkillConsultantUseCase.class
 org\grp2\api\trademe\domain\dto\offer\Offer.class
 org\grp2\api\trademe\domain\exception\account\AccountException.class
 org\grp2\api\trademe\domain\event\account\AccountCreated.class
@@ -95,6 +98,7 @@ org\grp2\kernel\EventHandler.class
 org\grp2\api\trademe\adapter\out\mapper\ConsultantEntityMapper.class
 org\grp2\api\trademe\StartupApplicationListener.class
 org\grp2\api\trademe\adapter\out\entity\OfferEntity.class
+org\grp2\api\trademe\application\services\account\consultant\RemoveSkillConsultantService.class
 org\grp2\api\trademe\application\port\in\usecase\account\client\CreateClientUseCase.class
 org\grp2\api\trademe\application\port\out\account\client\FindAllClientPort.class
 org\grp2\api\trademe\adapter\out\persistence\ConsultantPersistenceAdapter.class
@@ -110,8 +114,11 @@ org\grp2\kernel\DefaultCommandBus.class
 org\grp2\api\trademe\adapter\out\entity\AccountEntity.class
 org\grp2\api\trademe\application\events\offer\OfferCreatedApplicationEvent.class
 org\grp2\kernel\KernelConfiguration.class
+org\grp2\api\trademe\adapter\in\controller\account\consultant\request\SkillRequest.class
 org\grp2\api\trademe\application\services\account\client\FindAllClientService.class
 org\grp2\api\trademe\application\port\in\usecase\account\consultant\FindAllMatchConsultantUseCase.class
+org\grp2\api\trademe\application\services\account\consultant\AddSkillConsultantService.class
+org\grp2\api\trademe\application\port\in\command\account\consultant\RemoveSkillConsultantCommand.class
 org\grp2\api\trademe\Application.class
 org\grp2\api\trademe\application\port\in\command\offer\FindAllOfferCommand.class
 org\grp2\kernel\DefaultQueryBus.class
