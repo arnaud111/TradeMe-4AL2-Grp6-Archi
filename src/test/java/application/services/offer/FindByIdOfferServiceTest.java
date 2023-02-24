@@ -43,7 +43,7 @@ public class FindByIdOfferServiceTest {
         offerId = OfferId.of(UUID.randomUUID());
         command = new FindByIdOfferCommand(offerId.value());
     }
-/*
+
     @Test
     void handle_whenOfferExists_shouldReturnOffer() throws ClientException {
         Offer expectedOffer = new Offer(offerId, accountId);
@@ -61,5 +61,5 @@ public class FindByIdOfferServiceTest {
         OfferException exception = assertThrows(OfferException.class, () -> findByIdOfferService.handle(command));
 
         assertEquals("Offer: " + offerId.value() + " not found.", exception.getMessage());
-    }*/ 
+    }
 }

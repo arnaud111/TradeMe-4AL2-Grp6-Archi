@@ -34,7 +34,7 @@ public class FindByIdConsultantServiceTest {
 
     @InjectMocks
     private FindByIdConsultantService findByIdConsultantService;
-/*
+
     @BeforeEach
     void setUp() {
         accountId = AccountId.of(UUID.randomUUID());
@@ -58,5 +58,5 @@ public class FindByIdConsultantServiceTest {
         ConsultantException exception = assertThrows(ConsultantException.class, () -> findByIdConsultantService.handle(command));
 
         assertEquals("Consultant: " + accountId.value() + " not found.", exception.getMessage());
-    }*/
+    }
 }

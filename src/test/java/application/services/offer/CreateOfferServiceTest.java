@@ -36,7 +36,7 @@ public class CreateOfferServiceTest {
 
     @InjectMocks
     private CreateOfferService createOfferService;
-/*
+
     @Test
     public void handle_withValidCommand_shouldSaveOfferAndDispatchOfferCreatedEvent() {
         String accountId = UUID.randomUUID().toString();
@@ -65,5 +65,5 @@ public class CreateOfferServiceTest {
         assertEquals(offerId, dispatchedEvent.getOfferId().value());
 
         assertEquals(offerId, result);
-    }*/
+    }
 }
